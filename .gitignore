@@ -1,0 +1,10 @@
+.env
+__pycache__/
+.DS_Store
+.env.openai
+Execution logs/
+*.md
+.idea
+Knowledge/
+*.log
+data/

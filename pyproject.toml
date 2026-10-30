@@ -1,0 +1,25 @@
+[project]
+name = "op_inno_strat"
+version = "0.1.0"
+description = "op_inno_strat using crewAI"
+authors = [
+    { name = "Anonymous Authors" },
+]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.134.0,<1.0.0"
+]
+
+[project.scripts]
+op_inno_strat = "op_inno_strat.main:run"
+run_crew = "op_inno_strat.main:run"
+train = "op_inno_strat.main:train"
+replay = "op_inno_strat.main:replay"
+test = "op_inno_strat.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

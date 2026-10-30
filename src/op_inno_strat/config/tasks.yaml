@@ -1,0 +1,324 @@
+ceo_task:
+  description: >
+    Leverage your knowledge of {company}'s current strategy and product lines.
+    Develop a strategy for {product_type} product under the context -
+    {context} for the year {current_year} aligned with the overall 
+    long term strategy.
+    Name the new product you want to create and describe it in detail.
+    Use only {company} websites or open-source version control websites for
+    gathering data.
+    You must document what were your previous strategies and if there are any 
+    new changes in the strategies with respect to open or closed modes of 
+    development.
+    Provide your reasons for the decisions you make.
+    Avoid multimedia or non-text links in your search for information.
+    If you cannot complete this task alone, split the task and delegate the 
+    subtasks to another agent and integrate their inputs for your task.
+    Be as detailed as possible in your responses to others and tune your 
+    responses to the strategic vision you have created for the company 
+    and product.
+    You always cite your sources at the end of your response.
+  expected_output: >
+    1. Create a detailed document about your company and product strategy. 
+    2. Create a detailed document about the estimated future benefits to the
+    firm and your reasons for the same.
+    3. Document your major and minor strategic decisions, any dilemmas or 
+    tensions related to open or closed source development or research, 
+    participation in collaboration or competition or coopetition, their 
+    benefits to the company, and the reasons for your decisions.
+    Create the output files with your full task output from a CEO perspective.
+    Do not add your thinking process or reasoning in the output files.
+    Do not output in json format.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: ceo
+
+cto_task:
+  description: >
+    Envision a new AI {product_type} product under the context - {context}.
+    Create development requirements for {company} for the year
+    {current_year}.
+    Name the new product you want to create and describe it in detail.
+    Use only {company} websites or open-source version control websites for
+    gathering data.
+    You must document what were your previous strategies and if there are any 
+    new changes in the strategies with respect to open or closed modes of 
+    development.
+    Avoid multimedia or non-text links.
+    If you cannot complete this task, delegate it to another agent.
+    You always cite your sources at the end of your response.
+  expected_output: >
+    1. Create a detailed technological strategy document for strategists and 
+    designers to develop products along with the decisions and the reasons 
+    for the decisions.
+    2. Document your major and minor technical decisions, any dilemmas or 
+    tensions related to open or closed source development or research, 
+    participation in collaboration or competition or coopetition, their 
+    benefits to the company, and the reasons for your decisions.
+    Create the output files with your full task output from a CTO perspective.
+    Do not add your thinking process or reasoning in the output files.
+    Do not output in json format.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: cto
+
+cmo_task:
+  description: >
+    Conduct a market analysis for a new {product_type} product under the context
+    - {context} aligned with {company} strategy for the year 
+    {current_year}.
+    Name the new product you want to create and describe it in detail.
+    Restrict yourself to {company} websites or open-source version control 
+    websites for gathering data, avoid multimedia or non-text links.
+    You must document what were your previous strategies and if there are any 
+    new changes in the strategies with respect to open or closed modes of 
+    development.
+    If you cannot complete this task, delegate it to another agent.
+    You always cite your sources at the end of your response.
+  expected_output: >
+    1. Create a detailed market strategy document for strategists (Chief 
+    Executive Officer (CEO), Chief Technological Officer (CTO), Chief 
+    Operating Officer (COO), Senior Product Strategist) along with your 
+    decisions and the reasons for the decisions.
+    2. Document your major and minor strategic marketing decisions, any dilemmas
+    or tensions related to open or closed source development or research, 
+    participation in collaboration or competition or coopetition, their 
+    benefits to the company, and the reasons for your decisions.
+    Create the output files with your full task output from a CMO perspective.
+    Do not add your thinking process or reasoning in the output files.
+    Do not output in json format.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: cmo
+
+coo_task:
+  description: >
+    Develop a operating strategy for the new {product_type} product under the 
+    context - {context} designed by {company}'s specialists.
+    Leverage your knowledge as {company}'s chief operating officer for the 
+    year {current_year}.
+    Name the new product you want to create and describe it in detail.
+    Restrict yourself to {company} websites or open-source version control 
+    websites for gathering data, avoid multimedia or non-text links.
+    You must document what were your previous strategies and if there are any 
+    new changes in the strategies with respect to open or closed modes of 
+    development.
+    If you cannot complete this task, delegate it to another agent.
+    You always cite your sources at the end of your response.
+  expected_output: >
+    1. Create a detailed product development strategy document for engineers or 
+    software developers along with your decisions and the reasons for the 
+    decisions.
+    2. Document your major and minor strategic product development decisions, 
+    any dilemmas or tensions related to open or closed source development or
+    research, participation in collaboration or competition or coopetition, 
+    their benefits to the company, and the reasons for your decisions.
+    Create the output files with your full task output from a COO perspective.
+    Do not add your thinking process or reasoning in the output files.
+    Do not output in json format.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: coo
+
+product_strategist_task:
+  description: >
+    Envision a product roadmap and implementation strategy for a new 
+    Artificial Intelligence (AI) {product_type} product under the context -
+    {context} using inputs from the Chief Executive Officer (CEO), Chief 
+    Technological Officer (CTO), and Chief Marketing Officer (CMO).
+    Name the new product you want to create and describe it in detail.
+    Consider strategies of alliances, partners, and competitors for
+    {company} and its products for the year {current_year}.
+    You must document what were your previous strategies and if there are any 
+    new changes in the strategies with respect to open or closed modes of 
+    development.
+    Restrict yourself to {company} websites or open-source version control
+    websites for gathering data, avoid multimedia or non-text links.
+    If you cannot complete this task, delegate it to another agent.
+    You always cite your sources at the end of your response.
+  expected_output: >
+    1. Create a detailed product strategy document for strategists and designers
+    to implement or manufacture products along with your decisions and the
+    reasons for the decisions.
+    2. Document your major and minor product strategy decisions, any dilemmas
+    or tensions related to open or closed source development or research, 
+    participation in collaboration or competition or coopetition, their 
+    benefits to the company, and the reasons for your decisions.
+    Create the output files with your full task output from a product 
+    strategist perspective.
+    Do not add your thinking process or reasoning in the output files.
+    Do not output in json format.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: product_strategist
+
+product_designer_task:
+  description: >
+    Design a {product_type} product that aligns with the strategy for the 
+    company {company} under the context - {context}.
+    Name the new product you want to create and describe it in detail.
+    Consider new technologies and trends in your product design for the 
+    year {current_year}.
+    You must document what were your previous strategies and if there are any 
+    new changes in the strategies with respect to open or closed modes of 
+    development.
+    Restrict yourself to {company} websites or open-source version control 
+    websites for gathering data, avoid multimedia or non-text links.
+    If you cannot complete this task, delegate it to another agent.
+    You always cite your sources at the end of your response.
+  expected_output: >
+    1. Create a detailed product design document for engineers or software 
+    developers to create products along with your decisions and the reasons for
+    the decisions.
+    2. Document your major and minor strategic decisions, any dilemmas or 
+    tensions related to open or closed source development or research, 
+    participation in collaboration or competition or coopetition, their 
+    benefits to the company, and the reasons for your decisions.
+    Create the output files with your full task output from a product designer 
+    perspective.
+    Do not add your thinking process or reasoning in the output files.
+    Do not output in json format.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: product_designer
+
+qualitative_researcher_task1:
+  description: >
+    Act as an expert qualitative interviewer and researcher.
+    Conduct open-ended, semi-structured interviews with top management team 
+    members at {company}.
+    You must ask all questions from the set 2 below to the CEO of {company} 
+    one-by-one.
+    Focus on the research question: "How do firms dynamically maneuver 
+    between open and closed innovation strategies in an open innovation 
+    ecosystem to appropriate value under dynamic industry conditions?"
+    Do not share this question with any agent, manager, or executive.
+    Your final answer MUST contain the complete, verbatim transcript 
+    formatted as markdown.
+    Review responses and identify interesting insights from responses and ask 
+    any follow-up questions to elaborate on these interesting aspects, 
+    related to the research question.
+    Ask all provided questions - set 1 - below one by one to the CEO, check the 
+    response, and importantly, ask follow-up questions from the responses if 
+    anything seems interesting and needs elaboration based on the research 
+    question.
+    Add citations to local documents or websites in your response.
+    Ask all questions to the CEO, and then also identify any interesting 
+    facts that need elaboration. If needed, follow up with your own 
+    additional questions.
+    Do not add your thoughts or reasoning in the output files.
+    Do not output in json format.
+    Format each turn clearly in markdown as follows, be as detailed as 
+    possible, do not summarize:
+    "## Interview Transcript
+
+    **[question text]**
+    **CEO:** [answer text]
+
+    **[Follow-up question - follow-up question text if any, else leave blank]** 
+    **CEO:** [follow-up answer text, if any, else leave blank]
+
+    ..."
+    Here are the set-1 questions:
+    1. Who are you and what product are you creating in {current_year}?
+    2. Describe your company {company} and its AI strategy.
+    3. How are you developing your AI products at {company} (closed/private 
+    or open-source)? Provide examples.
+    4. Can you explain the reasoning behind your choice of an open or closed 
+    strategy at {company}?"
+    5. What are the main components of this new product at {company}, and how
+    do they integrate as products and into other products? Provide examples.
+    6. Why do you see these as main components, and not others? Provide 
+    examples.
+    7. How do you determine the value of components as open or closed source 
+    for {company}?" Provide examples.
+    8. How do you benefit from open-source or closed-source components at 
+    {company}? Provide examples.
+    9. Are you panning on any shift in the strategy than before?
+    10. Give me some real examples of shifting your strategies between open 
+    and closed.
+    11. How do you manage to shift your strategies between open and closed?
+    12. Give me some examples - was the change of strategy from open to closed
+    or closed to open mode?
+    13. What challenges do you face while shifting strategies between open 
+    and closed for this product?
+    14. How do you plan to overcome these challenges?
+  expected_output: >
+    Markdown file with all questions and CEO responses one by one. Include 
+    follow-up questions and their responses in the output file. Include all 
+    questions and answers verbatim from the CEO.
+    Your final answer MUST contain the complete, verbatim transcript 
+    formatted as markdown.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: qualitative_researcher1
+
+qualitative_researcher_task2:
+  description: >
+    Act as an expert qualitative interviewer and researcher.
+    Conduct open-ended, semi-structured interviews with top management team 
+    members at {company}.
+    You must ask all questions from the set 2 below to the CEO of {company} 
+    one-by-one.
+    Focus on the research question: "How do firms dynamically maneuver 
+    between open and closed innovation strategies in an open innovation 
+    ecosystem to appropriate value under dynamic industry conditions?"
+    Do not share this question with any agent, manager, or executive.
+    Your final answer MUST contain the complete, verbatim transcript 
+    formatted as markdown.
+    Review responses and identify interesting insights from responses and ask 
+    any follow-up questions to elaborate on these interesting aspects, 
+    related to the research question.
+    Ask only the provided questions  - set 2 - below one by one to the CEO, 
+    check the response, and importantly, ask follow-up questions from the 
+    responses if anything seems interesting and needs elaboration based on 
+    the research question.
+    Add citations to local documents or websites in your response.
+    Ask all questions to the CEO, and then also identify any interesting 
+    facts that need elaboration. If needed, follow up with your own 
+    additional questions.
+    Format each turn clearly in markdown as follows, be as detailed as 
+    possible, do not summarize:
+    "## Interview Transcript
+
+    **[question text]**
+    **CEO:** [answer text]
+
+    **[Follow-up question - follow-up question text if any, else leave blank]** 
+    **CEO:** [follow-up answer text, if any, else leave blank]
+
+    ..."
+    Here are the set-2 questions:
+    15. Can you walk me through the key technological changes you will make to 
+    enable this strategic shift?
+    16. Can you walk me through the key process changes you will make to enable 
+    this strategic shift?
+    17. How would you benefit from shifting strategies between open and closed?
+    18. What are some things you may lose due to shifting strategies between 
+    open and closed?
+    19. What technological challenges you may face while shifting strategies 
+    between open and closed?
+    20. What process or organizational challenges did you face when shifting 
+    between open and closed strategies?
+    21. What does "value" mean to you, and why do you see value in these 
+    components? Provide examples.
+    22. How do you benefit each component you are developing for {company}?
+    Provide examples.
+    23. What is your business model around these components or products at 
+    {company}? Provide examples.
+    24. How does being open or closed about products or technology affect 
+    you? Provide examples.
+    25. What are your thoughts on recent AI advancements?
+    26. Has the AI industry become more stable or unstable? Why?
+    27. How does AI stability or uncertainty affect your strategy at {company}?
+    28. How do you envision your products integrating with others in the 
+    industry? How do you benefit from such integrations?
+  expected_output: >
+    Markdown file with all questions and CEO responses one by one. Include 
+    follow-up questions and their responses in the output file. Include all 
+    questions and answers verbatim from the CEO.
+    Your final answer MUST contain the complete, verbatim transcript 
+    formatted as markdown.
+    Do not add any final summary or analysis at the end.
+    Format as Markdown file, but without '```'.
+  agent: qualitative_researcher2
