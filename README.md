@@ -1,56 +1,32 @@
-> **Anonymised for double-blind review.** This is the CrewAI pilot that preceded the ethnography-in-silico framework (https://github.com/airesearchagents/ethnography-in-silico, where `docs/REPRODUCE.md` explains how to rerun it). The code is as run, except that the authors' institution is redacted from the researcher agent's prompt in `src/op_inno_strat/config/agents.yaml`. Grounding documents are copyrighted and not included; the framework repository's `rag_corpora/SOURCES.csv` lists them, with hashes.
+# Ethnography in silico: the CrewAI pilot
 
-# OpInnoStrat Crew
+> **Anonymized for double-blind review.** Author names and other identifying details are removed, including the institution in the researcher agents' prompts. Everything the agents produce is synthetic text, not the view or decision of a real person or firm.
 
-Welcome to the OpInnoStrat Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+This is the code of the pilot that came before the [ethnography-in-silico framework](https://github.com/airesearchagents/ethnography-in-silico). We built it to test our ideas, and the framework grew from its lessons. Tag [`pilot-as-run`](https://github.com/airesearchagents/ethnography-in-silico-pilot/tree/pilot-as-run) marks the code as it ran.
 
-## Installation
+The pilot simulated a six-role top management team deciding on a product strategy, then had a researcher agent interview the CEO agent. To rerun it, see [REPRODUCE.md](REPRODUCE.md).
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## What is here
 
-First, if you haven't already, install uv:
+| File | What it does |
+|---|---|
+| [`src/op_inno_strat/config/agents.yaml`](src/op_inno_strat/config/agents.yaml) | Defines each agent's role, goal and backstory: six roles and two researcher agents |
+| [`src/op_inno_strat/config/tasks.yaml`](src/op_inno_strat/config/tasks.yaml) | Defines each task: a strategy document per role, and the two sets of interview questions |
+| [`src/op_inno_strat/crew.py`](src/op_inno_strat/crew.py) | Builds the document store and tools, and assembles the agents and tasks into a crew |
+| [`src/op_inno_strat/main.py`](src/op_inno_strat/main.py) | Sets the firm, condition and year for a run |
+| [`pyproject.toml`](pyproject.toml), [`uv.lock`](uv.lock) | The dependencies, including CrewAI 0.134 |
+| [`SOURCES.csv`](SOURCES.csv) | The source documents: title, type, location in `data/` (the `pilot_path` column) and SHA-256 hash |
+| `src/op_inno_strat/tools/`, `knowledge/` | CrewAI's template files, not used by the pilot |
 
-```bash
-pip install uv
-```
+The source documents may be under copyright, so they are not here, and neither are the run outputs.
 
-Next, navigate to your project directory and install the dependencies:
+## How the pilot worked
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+- **Framework:** [CrewAI](https://github.com/crewAIInc/crewAI), an open-source Python framework for running teams of role-playing agents. Tasks ran in sequence, with planning, memory and delegation switched on. A manager agent is defined in the code but not used.
+- **Agents:** CEO, CTO, COO, CMO, Product Strategist and Product Designer, then a researcher agent, split into two agents with separate question sets, that interviewed the CEO agent.
+- **Model:** OpenAI `o1-mini`, up to five iterations per task. The code defines temperature and top-p settings but does not pass them to the model.
+- **Scenarios:** five firms (OpenAI, Anthropic, Hugging Face, Meta, Google) × industry context (dynamic or stable) × product type (novel or enhancement), giving 20 cells.
+- **Grounding:** public documents split into 1,024-character passages with 256 characters of overlap, embedded with OpenAI embeddings and indexed in ChromaDB. Agents retrieved passages through a knowledge-base tool.
+- **Records:** each run produced six strategy documents, a system log and the CEO interview transcript. We coded the strategy documents and transcripts inductively by hand.
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/op_inno_strat/config/agents.yaml` to define your agents
-- Modify `src/op_inno_strat/config/tasks.yaml` to define your tasks
-- Modify `src/op_inno_strat/crew.py` to add your own logic, tools and specific args
-- Modify `src/op_inno_strat/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the op_inno_strat Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The op_inno_strat Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the OpInnoStrat Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+The framework repository's [`docs/LEARNINGS.md`](https://github.com/airesearchagents/ethnography-in-silico/blob/main/docs/LEARNINGS.md) says what the pilot taught us.
