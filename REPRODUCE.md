@@ -6,7 +6,7 @@ Language models are stochastic, so a rerun gives a new sample from the same proc
 
 - Python 3.10 to 3.13.
 - An OpenAI API key, with access to the model you choose. The pilot ran on `o1-mini`.
-- The source documents, which may be under copyright and are not in this repository. [`SOURCES.csv`](SOURCES.csv) lists each one, with its location and SHA-256 hash. One listed file, a Hugging Face interview transcript, is empty, so it adds nothing to the store. The source documents can be made available privately on request, through the editors, for review purposes only and as copyright permits.
+- The source documents, which may be under copyright and are not in this repository. [`SOURCES.csv`](SOURCES.csv) lists each one, with its location and SHA-256 hash. The source documents can be made available privately on request, through the editors, for review purposes only and as copyright permits.
 
 ## Steps
 
